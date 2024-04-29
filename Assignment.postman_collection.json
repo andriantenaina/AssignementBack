@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "7a6e77d6-6ba0-4a43-beba-a4ba70ed517e",
+		"name": "Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all assignements",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/assignments",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"assignments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get assignement by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/assignments?id=1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"assignments"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add assignement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"nom\": \"test\",\n    \"dateDeRendu\": \"2024-04-29\",\n    \"rendu\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/assignments",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"assignments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update assignement",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"663000f8237b444fee6f2d02\",\n    \"nom\": \"test updated\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/assignments",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"assignments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delet assignement",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/assignments/663000f8237b444fee6f2d02",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"assignments",
+						"663000f8237b444fee6f2d02"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8010",
+			"type": "default"
+		}
+	]
+}
