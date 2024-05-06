@@ -1,139 +1,370 @@
 {
 	"info": {
-		"_postman_id": "7a6e77d6-6ba0-4a43-beba-a4ba70ed517e",
+		"_postman_id": "52185a8e-e12b-42a3-879f-9280a75c2306",
 		"name": "Assignment",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "get all assignements",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/api/assignments",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"assignments"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get assignement by id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/api/assignments?id=1",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"assignments"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "1"
+			"name": "assignement",
+			"item": [
+				{
+					"name": "get all assignements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/assignments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"assignments"
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "add assignement",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"id\": 1,\n    \"nom\": \"test\",\n    \"dateDeRendu\": \"2024-04-29\",\n    \"rendu\": false\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{host}}/api/assignments",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"assignments"
-					]
+				{
+					"name": "get assignement by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/assignments?id=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"assignments"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add assignement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"nom\": \"test\",\n    \"dateDeRendu\": \"2024-04-29\",\n    \"rendu\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/assignments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"assignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update assignement",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"663000f8237b444fee6f2d02\",\n    \"nom\": \"test updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/assignments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"assignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delet assignement",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/assignments/663000f8237b444fee6f2d02",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"assignments",
+								"663000f8237b444fee6f2d02"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "update assignement",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"_id\": \"663000f8237b444fee6f2d02\",\n    \"nom\": \"test updated\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "User/Auth",
+			"item": [
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\" : \"admin\",\r\n    \"last_name\": \"admin\",\r\n    \"date_of_birth\": \"2000-04-29\",\r\n    \"status\": \"admin\",\r\n    \"email\" : \"admin@mail.com\",\r\n    \"password\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{host}}/api/assignments",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"assignments"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "delet assignement",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"admin@mail.com\",\r\n    \"password\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{host}}/api/assignments/663000f8237b444fee6f2d02",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"assignments",
-						"663000f8237b444fee6f2d02"
-					]
+				{
+					"name": "verify token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/auth/me",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users?id=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"last_name\": \"admin\",\r\n    \"date_of_birth\": \"2000-04-29\",\r\n    \"status\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users/663884349eb1a17e7c312dc2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"663884349eb1a17e7c312dc2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users/663888e2d4738a0bd8c27f76",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"663888e2d4738a0bd8c27f76"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
+				"id": "68f974fc-88d7-424c-bba0-1098e4d4a151",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -143,6 +374,7 @@
 		{
 			"listen": "test",
 			"script": {
+				"id": "4002136c-5694-44b5-b263-2477ec7945e6",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -152,9 +384,15 @@
 	],
 	"variable": [
 		{
+			"id": "acd7f360-cc31-4954-822a-57e05308e69b",
 			"key": "host",
-			"value": "http://localhost:8010",
-			"type": "default"
+			"value": "http://localhost:8010"
+		},
+		{
+			"id": "9b6ea64c-7e52-4bba-b7ea-73e377bae363",
+			"key": "token",
+			"value": ""
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
