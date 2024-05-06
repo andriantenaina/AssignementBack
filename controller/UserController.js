@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var bcrypt = require('bcryptjs');
 // var bodyParser = require('body-parser');
 
 var VerifyToken = require(__root + 'auth/VerifyToken');
@@ -10,9 +11,13 @@ var User = require('../model/User');
 // CREATES A NEW USER
 router.post('/', function (req, res) {
     User.create({
+            id: req.body.id,
             name : req.body.name,
+            last_name: req.body.lastName,
+            date_of_birth: req.body.date_of_birth,
+            status: req.body.status,
             email : req.body.email,
-            password : req.body.password
+            password : bcrypt.hashSync(req.body.password, 8)
         }, 
         function (err, user) {
             if (err) return res.status(500).send("There was a problem adding the information to the database.");
@@ -49,7 +54,10 @@ router.delete('/:id', function (req, res) {
 // Added VerifyToken middleware to make sure only an authenticated user can put to this route
 router.put('/:id', /* VerifyToken, */ function (req, res) {
     User.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, user) {
-        if (err) return res.status(500).send("There was a problem updating the user.");
+        if (err){
+            console.log(err);
+            return res.status(500).send("There was a problem updating the user.");
+        } 
         res.status(200).send(user);
     });
 });

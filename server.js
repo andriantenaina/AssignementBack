@@ -1,7 +1,7 @@
-let express = require('express');
-let app = express();
-let bodyParser = require('body-parser');
-let assignment = require('./routes/assignments');
+let config = require('./config');
+// let app = express();
+// let bodyParser = require('body-parser');
+// let assignment = require('./routes/assignments');
 
 // let mongoose = require('mongoose');
 // mongoose.Promise = global.Promise;
@@ -54,7 +54,7 @@ let assignment = require('./routes/assignments');
 // .delete(assignment.deleteAssignment);
 
 var app = require('./app');
-let port = process.env.PORT || 8010;
+let port = config.port;
 
 // On démarre le serveur
 app.listen(port, "0.0.0.0");

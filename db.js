@@ -1,4 +1,5 @@
 let mongoose = require('mongoose');
+let config = require('./config');
 mongoose.Promise = global.Promise;
 // mongoose.set('debug', true);
 
@@ -15,7 +16,7 @@ mongoose.connect(uri, options)
   .then(() => {
     console.log("Connecté à la base MongoDB assignments dans le cloud !");
     console.log("at URI = " + uri);
-    console.log("vérifiez with http://localhost:" + port + "/api/assignments que cela fonctionne")
+    console.log("vérifiez with http://localhost:" + config.port + "/api/assignments que cela fonctionne")
   },
     err => {
       console.log('Erreur de connexion: ', err);
