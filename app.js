@@ -3,9 +3,12 @@ var app = express();
 var db = require('./db');
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
+const cors = require('cors');
 
 global.__root   = __dirname + '/'; 
 // var secret = process.env.SECRET || "supersecret";
+
+app.use(cors());
 
 // Pour accepter les connexions cross-domain (CORS)
 app.use(function (req, res, next) {
