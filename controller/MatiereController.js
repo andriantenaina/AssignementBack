@@ -51,7 +51,7 @@ function getMatiere(req, res){
 // Ajout d'un matiere (POST)
 function postMatiere(req, res){
     let matiere = new Matiere();
-    matiere._id = req.body._id;
+    matiere.code = req.body.code;
     matiere.nom = req.body.nom;
     matiere.description = req.body.description;
     matiere.id_user = req.body.id_user;
