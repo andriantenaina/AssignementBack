@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 // var bodyParser = require('body-parser');
 
-var VerifyToken = require('../auth/VerifyToken');
+var VerifyToken = require('../middleware/VerifyToken');
 
 // router.use(bodyParser.urlencoded({ extended: false }));
 // router.use(bodyParser.json());

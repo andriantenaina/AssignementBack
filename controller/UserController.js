@@ -3,7 +3,7 @@ var router = express.Router();
 var bcrypt = require('bcryptjs');
 // var bodyParser = require('body-parser');
 
-var VerifyToken = require(__root + 'auth/VerifyToken');
+var VerifyToken = require(__root + 'middleware/VerifyToken');
 
 // router.use(bodyParser.urlencoded({ extended: true }));
 var User = require('../model/User');
@@ -11,7 +11,7 @@ var User = require('../model/User');
 // CREATES A NEW USER
 router.post('/', function (req, res) {
     User.create({
-            id: req.body.id,
+            id: req.body.id, 
             name : req.body.name,
             last_name: req.body.lastName,
             date_of_birth: req.body.date_of_birth,

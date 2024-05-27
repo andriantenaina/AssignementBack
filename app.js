@@ -6,6 +6,8 @@ let assignment = require('./routes/assignments');
 const cors = require('cors');
 
 global.__root   = __dirname + '/'; 
+// global.__basedir = __dirname;
+
 // var secret = process.env.SECRET || "supersecret";
 
 app.use(cors());
@@ -44,5 +46,8 @@ app.use('/api/users', UserController);
 
 var AuthController = require(__root + 'controller/AuthController');
 app.use('/api/auth', AuthController);
+
+var FilController = require(__root + 'controller/FileController');
+app.use('/api/file', FilController)
 
 module.exports = app;
