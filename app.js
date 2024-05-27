@@ -3,6 +3,7 @@ var app = express();
 var db = require('./db');
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
+let matiere = require('./controller/MatiereController');
 const cors = require('cors');
 
 global.__root   = __dirname + '/'; 
@@ -40,6 +41,15 @@ app.route(prefix + '/assignments')
 app.route(prefix + '/assignments/:id')
 .get(assignment.getAssignment)
 .delete(assignment.deleteAssignment);
+
+app.route(prefix + '/matieres')
+.post(matiere.postMatiere)
+.put(matiere.updateMatiere)
+.get(matiere.getMatieres);
+
+app.route(prefix + '/matieres/:id')
+.get(matiere.getMatiere)
+.delete(matiere.deleteMatiere);
 
 var UserController = require(__root + 'controller/UserController');
 app.use('/api/users', UserController);
