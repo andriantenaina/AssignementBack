@@ -6,7 +6,7 @@ let MatiereSchema = Schema({
   code: String,
   nom: String,
   description: String,
-  id_user: Number,
+  id_user: String,
   image_name: String
 });
 MatiereSchema.plugin(mongoosePaginate);

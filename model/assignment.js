@@ -6,7 +6,11 @@ let AssignmentSchema = Schema({
     id: Number,
     dateDeRendu: Date,
     nom: String,
-    rendu: Boolean
+    rendu: Boolean,
+    id_user: String,
+    id_matiere: String,
+    note: Number,
+    remarque: String
 });
 
 AssignmentSchema.plugin(mongoosePaginate);
@@ -15,3 +19,4 @@ AssignmentSchema.plugin(mongoosePaginate);
 // assignment est le nom de la collection dans la base de données
 // Mongoose tolère certaines erreurs dans le nom (ex: Assignent au lieu de assignments)
 module.exports = mongoose.model('assignments', AssignmentSchema);
+

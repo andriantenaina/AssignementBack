@@ -32,7 +32,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/api/assignments?id=1",
+							"raw": "{{host}}/api/assignments?_id=6654e58315e9282837a420a0",
 							"host": [
 								"{{host}}"
 							],
@@ -42,8 +42,8 @@
 							],
 							"query": [
 								{
-									"key": "id",
-									"value": "1"
+									"key": "_id",
+									"value": "6654e58315e9282837a420a0"
 								}
 							]
 						}
@@ -57,7 +57,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"nom\": \"test\",\n    \"dateDeRendu\": \"2024-04-29\",\n    \"rendu\": false\n}",
+							"raw": "{\n    \"dateDeRendu\": \"2024-04-29\",\n    \"rendu\": false,\n    \"nom\": \"assignment test 1\",\n    \"id_user\": \"6654e52e15e9282837a4209f\",\n    \"id_matiere\": \"6654d82a8dc40f1fbb0acc1f\",\n    \"note\": 13,\n    \"remarque\": \"remarque de l'assignment\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -410,7 +410,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/users?id=1",
+							"raw": "{{host}}/api/users?_id=6654e52e15e9282837a4209f",
 							"host": [
 								"{{host}}"
 							],
@@ -420,8 +420,8 @@
 							],
 							"query": [
 								{
-									"key": "id",
-									"value": "1"
+									"key": "_id",
+									"value": "6654e52e15e9282837a4209f"
 								}
 							]
 						}

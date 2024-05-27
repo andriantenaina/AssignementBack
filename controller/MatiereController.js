@@ -34,7 +34,7 @@ function getMatieres(req, res){
 
 // Récupérer un matiere par son id (GET)
 function getMatiere(req, res){
-    let matiereId = req.params.id;
+    let matiereId = req.params._id;
     Matiere.findById(matiereId, (err, matiere) =>{
         if(err){res.send(err)}
         res.json(matiere);
@@ -51,7 +51,7 @@ function getMatiere(req, res){
 // Ajout d'un matiere (POST)
 function postMatiere(req, res){
     let matiere = new Matiere();
-    matiere.id = req.body.id;
+    matiere._id = req.body._id;
     matiere.nom = req.body.nom;
     matiere.description = req.body.description;
     matiere.id_user = req.body.id_user;
@@ -89,7 +89,7 @@ function updateMatiere(req, res) {
 // l'id est bien le _id de mongoDB
 function deleteMatiere(req, res) {
 
-    Matiere.findByIdAndRemove(req.params.id, (err, matiere) => {
+    Matiere.findByIdAndRemove(req.params._id, (err, matiere) => {
         if (err) {
             res.send(err);
         }
