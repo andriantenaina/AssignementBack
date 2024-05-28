@@ -2,14 +2,15 @@ var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var config = require('../config'); // get our config file
 
 function verifyToken(req, res, next) {
-
+  // console.log(req);
   // check header or url parameters or post parameters for token
   // var token = req.headers['authorization'];
   const bearerHeader = req.headers['authorization'];
-    if (typeof bearerHeader !== 'undefined') 
+  // console.log(req.headers);
+    if (typeof bearerHeader == 'undefined') 
       return res.status(403).send({ auth: false, message: 'bearerHeader undefined.' });
     const token = bearerHeader.split(' ')[1];
-    if (!token || typeof bearerHeader !== 'undefined')
+    if (!token || typeof bearerHeader == 'undefined')
       return res.status(403).send({ auth: false, message: 'No token provided.' });
   
     // verifies secret and checks exp

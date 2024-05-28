@@ -3,9 +3,15 @@ var app = express();
 var db = require('./db');
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
+let matiere = require('./controller/MatiereController');
+const cors = require('cors');
 
 global.__root   = __dirname + '/'; 
+// global.__basedir = __dirname;
+
 // var secret = process.env.SECRET || "supersecret";
+
+app.use(cors());
 
 // Pour accepter les connexions cross-domain (CORS)
 app.use(function (req, res, next) {
@@ -36,10 +42,22 @@ app.route(prefix + '/assignments/:id')
 .get(assignment.getAssignment)
 .delete(assignment.deleteAssignment);
 
+app.route(prefix + '/matieres')
+.post(matiere.postMatiere)
+.put(matiere.updateMatiere)
+.get(matiere.getMatieres);
+
+app.route(prefix + '/matieres/:id')
+.get(matiere.getMatiere)
+.delete(matiere.deleteMatiere);
+
 var UserController = require(__root + 'controller/UserController');
 app.use('/api/users', UserController);
 
 var AuthController = require(__root + 'controller/AuthController');
 app.use('/api/auth', AuthController);
+
+var FilController = require(__root + 'controller/FileController');
+app.use('/api/file', FilController)
 
 module.exports = app;

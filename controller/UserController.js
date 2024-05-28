@@ -3,7 +3,7 @@ var router = express.Router();
 var bcrypt = require('bcryptjs');
 // var bodyParser = require('body-parser');
 
-var VerifyToken = require(__root + 'auth/VerifyToken');
+var VerifyToken = require(__root + 'middleware/VerifyToken');
 
 // router.use(bodyParser.urlencoded({ extended: true }));
 var User = require('../model/User');
@@ -11,7 +11,7 @@ var User = require('../model/User');
 // CREATES A NEW USER
 router.post('/', function (req, res) {
     User.create({
-            id: req.body.id,
+            // id: req.body._id, 
             name : req.body.name,
             last_name: req.body.lastName,
             date_of_birth: req.body.date_of_birth,
@@ -34,8 +34,8 @@ router.get('/', function (req, res) {
 });
 
 // GETS A SINGLE USER FROM THE DATABASE
-router.get('/:id', function (req, res) {
-    User.findById(req.params.id, function (err, user) {
+router.get('/:_id', function (req, res) {
+    User.findById(req.params._id, function (err, user) {
         if (err) return res.status(500).send("There was a problem finding the user.");
         if (!user) return res.status(404).send("No user found.");
         res.status(200).send(user);
@@ -44,7 +44,7 @@ router.get('/:id', function (req, res) {
 
 // DELETES A USER FROM THE DATABASE
 router.delete('/:id', function (req, res) {
-    User.findByIdAndRemove(req.params.id, function (err, user) {
+    User.findByIdAndRemove(req.params._id, function (err, user) {
         if (err) return res.status(500).send("There was a problem deleting the user.");
         res.status(200).send("User: "+ user.name +" was deleted.");
     });
@@ -53,7 +53,7 @@ router.delete('/:id', function (req, res) {
 // UPDATES A SINGLE USER IN THE DATABASE
 // Added VerifyToken middleware to make sure only an authenticated user can put to this route
 router.put('/:id', /* VerifyToken, */ function (req, res) {
-    User.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, user) {
+    User.findByIdAndUpdate(req.params._id, req.body, {new: true}, function (err, user) {
         if (err){
             console.log(err);
             return res.status(500).send("There was a problem updating the user.");
