@@ -34,7 +34,7 @@ function getMatieres(req, res){
 
 // Récupérer un matiere par son id (GET)
 function getMatiere(req, res){
-    let matiereId = req.params._id;
+    let matiereId = req.params.id;
     Matiere.findById(matiereId, (err, matiere) =>{
         if(err){res.send(err)}
         res.json(matiere);

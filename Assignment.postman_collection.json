@@ -186,7 +186,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"code\": \"Math_001\",\n  \"nom\": \"Matiere 1\",\n  \"description\": \"test description matiere 1\",\n  \"id_user\": 1,\n  \"image_name\": \"mg.png\"\n}",
+							"raw": "{\n    \"id\": 2,\n    \"code\": \"Math_002\",\n  \"nom\": \"Matiere 2\",\n  \"description\": \"test description matiere 2\",\n  \"id_user\": 1,\n  \"image_name\": \"mg.png\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -213,7 +213,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"_id\": \"6654d48981f1111e0792c021\",\n    \"nom\": \"Matiere 1 updated\"\n}",
+							"raw": "{\n    \"_id\": \"6654f148c98f622c515353b4\",\n    \"id_user\": \"6654e52e15e9282837a4209f\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -410,19 +410,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/users?_id=6654e52e15e9282837a4209f",
+							"raw": "{{host}}/api/users/6654e52e15e9282837a4209f",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"api",
-								"users"
-							],
-							"query": [
-								{
-									"key": "_id",
-									"value": "6654e52e15e9282837a4209f"
-								}
+								"users",
+								"6654e52e15e9282837a4209f"
 							]
 						}
 					},
