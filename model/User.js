@@ -8,7 +8,8 @@ let UserSchema = Schema({
   date_of_birth: String,
   status: String,
   email: String,
-  password: String
+  password: String,
+  image_profile: String
 });
 UserSchema.plugin(mongoosePaginate);
 module.exports = mongoose.model('User', UserSchema);
