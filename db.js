@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 
 // remplacer toute cette chaine par l'URI de connexion à votre propre base dans le cloud s
 // const uri = 'mongodb+srv://mb1:toto@cluster0.lxvcyxy.mongodb.net/assignments?retryWrites=true&w=majority&appName=Cluster0';
-const uri = 'mongodb://localhost:27017/assignments';
+const uri = 'mongodb+srv://user:user123456@cluster-angular-mbds.infur5f.mongodb.net/';
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
